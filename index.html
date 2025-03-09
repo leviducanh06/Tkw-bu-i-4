@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu & Bài Tập</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f8ff;
+            color: #1a237e;
+            text-align: center;
+        }
+        .header {
+            background: #0d47a1;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #1565c0;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            text-align: left;
+        }
+        .sidebar a:hover {
+            background: #0d47a1;
+        }
+        .content-container {
+            margin-left: 260px;
+            padding: 20px;
+        }
+        .content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .show {
+            display: block;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        ul li a {
+            text-decoration: none;
+            color: #0d47a1;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Website Học Tập</div>
+    <div class="sidebar">
+        <a href="#" onclick="showContent('baiTap')">Bài Tập</a>
+    </div>
+        <div id="baiTap" class="content">
+            <h2>Danh Sách Bài Tập</h2>
+            <ul>
+                <li><a href="nda11b4.html">Bài tập 1.1</a></li>
+                <li><a href="nda12b4.html">Bài tập 1.2</a></li>
+                <li><a href="nda2b4.html">Bài tập 2</a></li>
+                <li><a href="nda31b4.html">Bài tập 3.1</a></li>
+                <li><a href="nda32b4.html">Bài tập 3.2</a></li>
+                <li><a href="nda33b4.html">Bài tập 3.3</a></li>
+               <li><a href="nda4b4.html">Bài tập 4</a></li>
+            </ul>
+        </div>
+  
+    <script>
+        function showContent(id) {
+            document.querySelectorAll('.content').forEach(el => el.classList.remove('show'));
+            document.getElementById(id).classList.add('show');
+        }
+    </script>
+</body>
+</html>
