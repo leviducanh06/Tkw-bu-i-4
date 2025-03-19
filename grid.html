@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+        .card {
+            background-color: #d11c4b;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            max-width: 1000px;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+        }
+        .news-item {
+            text-align: left;
+        }
+        .news-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .news-item p {
+            font-size: 14px;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="name">Bão mạng</div>
+            <div class="content">
+                <div class="news-item">
+                    <img src="http://image.congan.com.vn/thumbnail/CATP-480-2022-10-4/bdc69ded-fde2-4336-aa47-de7195ca4baa_4032_3024_308.jpeg">
+                    <p>Bé bị ba 3 tháng tuổi rơi từ tầng cao xuống tử vong: Cảnh sát đang điều tra nguyên nhân.</p>
+                </div>
+                <div class="news-item">
+                    <img src="https://img.docnhanh.vn/thumb_x330x255/2022/10/03/canh-sat-giao-thong.jpg">
+                    <p>MXH khen ngợi cảnh sát giao thông đã giúp đỡ cụ già qua đường.</p>
+                </div>
+                <div class="news-item">
+                    <img src="https://thanhnien.mediacdn.vn/Uploaded/hinhdd/2022_09_24/222-1208.jpg">
+                    <p>Lại xuất hiện clip khách chốt mua nhanh như chớp tại Bình Phước</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
