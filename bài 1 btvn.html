@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material 3 Clone</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@material/web/all.css">
+    <script type="module">
+        import * as tslib from "./tslib.js";
+        import "https://cdn.jsdelivr.net/npm/@material/web/all.js";
+    </script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+            display: flex;
+        }
+        .sidebar {
+            width: 80px;
+            background-color: #1e1e1e;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .sidebar button {
+            background: none;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .sidebar button:hover {
+            background-color: #333;
+            border-radius: 10px;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        .hero-text {
+            max-width: 50%;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #cfcfcf;
+        }
+        .hero button {
+            background-color: #9370DB;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .hero button:hover {
+            background-color: #7a5cc9;
+        }
+        .news-section {
+            width: 90%;
+            margin-top: 40px;
+        }
+        .news-container {
+            display: flex;
+            gap: 20px;
+        }
+        .news-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 15px;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#FFFFFF"><path d="M226.67-186.67h140v-246.66h226.66v246.66h140v-380L480-756.67l-253.33 190v380ZM160-120v-480l320-240 320 240v480H526.67v-246.67h-93.34V-120H160Zm320-352Z"/></svg> Home</button>
+        <button><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#FFFFFF"><path d="M230.67-160q-29.67 0-50.17-20.5T160-230.67q0-29.66 20.5-50.16 20.5-20.5 50.17-20.5 29.66 0 50.16 20.5 20.5 20.5 20.5 50.16 0 29.67-20.5 50.17T230.67-160ZM480-160q-29.67 0-50.17-20.5t-20.5-50.17q0-29.66 20.5-50.16 20.5-20.5 50.17-20.5t50.17 20.5q20.5 20.5 20.5 50.16 0 29.67-20.5 50.17T480-160Zm249.33 0q-29.66 0-50.16-20.5-20.5-20.5-20.5-50.17 0-29.66 20.5-50.16 20.5-20.5 50.16-20.5 29.67 0 50.17 20.5t20.5 50.16q0 29.67-20.5 50.17T729.33-160ZM230.67-409.33q-29.67 0-50.17-20.5T160-480q0-29.67 20.5-50.17t50.17-20.5q29.66 0 50.16 20.5 20.5 20.5 20.5 50.17t-20.5 50.17q-20.5 20.5-50.16 20.5Zm249.33 0q-29.67 0-50.17-20.5T409.33-480q0-29.67 20.5-50.17t50.17-20.5q29.67 0 50.17 20.5t20.5 50.17q0 29.67-20.5 50.17T480-409.33Zm249.33 0q-29.66 0-50.16-20.5-20.5-20.5-20.5-50.17t20.5-50.17q20.5-20.5 50.16-20.5 29.67 0 50.17 20.5T800-480q0 29.67-20.5 50.17t-50.17 20.5ZM230.67-658.67q-29.67 0-50.17-20.5T160-729.33q0-29.67 20.5-50.17t50.17-20.5q29.66 0 50.16 20.5 20.5 20.5 20.5 50.17 0 29.66-20.5 50.16-20.5 20.5-50.16 20.5Zm249.33 0q-29.67 0-50.17-20.5t-20.5-50.16q0-29.67 20.5-50.17T480-800q29.67 0 50.17 20.5t20.5 50.17q0 29.66-20.5 50.16-20.5 20.5-50.17 20.5Zm249.33 0q-29.66 0-50.16-20.5-20.5-20.5-20.5-50.16 0-29.67 20.5-50.17t50.16-20.5q29.67 0 50.17 20.5t20.5 50.17q0 29.66-20.5 50.16-20.5 20.5-50.17 20.5Z"/></svg> Get started</button>
+        <button><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#FFFFFF"><path d="m320-241.33-240-240 241.33-241.34L369-675 175-481l192.33 192.33L320-241.33ZM638.67-240 591-287.67l194-194L592.67-674 640-721.33l240 240L638.67-240Z"/></svg> Develop</button>
+        <button><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#FFFFFF"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-84.33 32.17-157.33 32.16-73 87.66-127t129.84-84.84Q404-880 488.67-880 568-880 639-853.17q71 26.84 124.5 74.34t85 112.66Q880-601 880-524q0 110.33-65.33 172.5-65.34 62.17-168 62.17H572q-15 0-24.83 11-9.84 11-9.84 24.33 0 22 14.67 42.17 14.67 20.16 14.67 46.5 0 42-23.17 63.66Q520.33-80 480-80Zm0-400Zm-228.67 30.67q22 0 37.67-15.67 15.67-15.67 15.67-37.67T289-540.33Q273.33-556 251.33-556t-37.66 15.67Q198-524.67 198-502.67q0 22 15.67 37.67 15.66 15.67 37.66 15.67Zm124-166.67q22 0 37.67-15.67 15.67-15.66 15.67-37.66 0-22-15.67-37.67-15.67-15.67-37.67-15.67T337.67-707Q322-691.33 322-669.33t15.67 37.66Q353.33-616 375.33-616Zm209.34 0q22 0 37.66-15.67Q638-647.33 638-669.33q0-22-15.67-37.67-15.66-15.67-37.66-15.67-22 0-37.67 15.67-15.67 15.67-15.67 37.67T547-631.67Q562.67-616 584.67-616ZM712-449.33q22 0 37.67-15.67 15.66-15.67 15.66-37.67t-15.66-37.66Q734-556 712-556t-37.67 15.67q-15.66 15.66-15.66 37.66 0 22 15.66 37.67Q690-449.33 712-449.33ZM480-146.67q10.33 0 15.17-4.66 4.83-4.67 4.83-14 0-14-14.67-28.34Q470.67-208 470.67-248q0-44.67 29.66-76.33Q530-356 574.67-356h72q72.66 0 119.66-42.5t47-125.5q0-128.33-97.5-208.83t-227.16-80.5q-142.67 0-242.34 96.66Q146.67-620 146.67-480q0 138.33 97.5 235.83T480-146.67Z"/></svg> Styles</button>
+        <button></button>
+    </div>
+    <div class="main-content">
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Material Design</h1>
+                <p>Material 3 is the latest version of Google’s open-source design system.</p>
+                <button>Get Started</button>
+            </div>
+            <div class="hero-image">
+                <video width="400" height="200">
+                    <source src="https://kstatic.googleusercontent.com/files/65da8f0326427a8e71bfa678348f3fa1a4bb1660e0b013591eb3bfd9df455bd5a3334249de61229029be7d2fd7cf18d4e143728b7e0702b6bde6251a9c64511a" type="video/mp4">
+                </video>
+            </div>
+        </section>
+        <section class="news-section">
+            <h2>News & Launches</h2>
+            <div class="news-container">
+                <div class="news-card">
+                    <h3>Material Design at Google I/O</h3>
+                    <p>See the full list of Material talks and tutorials launching at I/O 2024.</p>
+                </div>
+                <div class="news-card">
+                    <h3>How to get Google Fonts</h3>
+                    <p>New API updates and website upgrades make font integration easier.</p>
+                </div>
+                <div class="news-card">
+                    <h3>Figma M3 Design Kit</h3>
+                    <p>Start designing and prototyping with the complete Material 3 library.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
