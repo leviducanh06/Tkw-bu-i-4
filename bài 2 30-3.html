@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <title>Submenu 2 Cấp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background: #333;
+    padding: 10px;
+    z-index: 1000;
+}
+        .menu {
+            list-style: none;
+            display: flex;
+            margin-left: auto;
+        }
+        .menu > li {
+            position: relative;
+            margin-right: 20px;
+        }
+        .menu > li > a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        .menu > li:hover > a {
+            background: red;
+        }
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            list-style: none;
+            display: none;
+            min-width: 160px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .submenu li {
+            position: relative;
+        }
+        .submenu li a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        .submenu li:hover {
+            background: #f1f1f1;
+        }
+        .menu > li:hover .submenu {
+            display: block;
+        }
+        .submenu .submenu-right {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background: white;
+            min-width: 160px;
+            display: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .submenu li:hover .submenu-right {
+            display: block;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f9f9f9;
+        }
+        .product-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 60px; 
+}
+        .product {
+            text-align: center;
+            width: 200px;
+        }
+        .image-box {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .image-box .hover-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        .image-box:hover .hover-img {
+            opacity: 1;
+        }
+        .product-name {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .price {
+            font-weight: bold;
+        }
+        .category {
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop ▼</a>
+            <ul class="submenu">
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li>
+                    <a href="#">Variants ▶</a>
+                    <ul class="submenu-right">
+                        <li><a href="#">Option 1</a></li>
+                        <li><a href="#">Option 2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Pagination ▶</a>
+                    <ul class="submenu-right">
+                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Page 2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Cart Icon ▶</a>
+                    <ul class="submenu-right">
+                        <li><a href="#">View Cart</a></li>
+                        <li><a href="#">Checkout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><a href="#">Product</a><ul class="submenu">
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li>
+                <a href="#">Variants ▶</a>
+                <ul class="submenu-right">
+                    <li><a href="#">Option 1</a></li>
+                    <li><a href="#">Option 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Pagination ▶</a>
+                <ul class="submenu-right">
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Cart Icon ▶</a>
+                <ul class="submenu-right">
+                    <li><a href="#">View Cart</a></li>
+                    <li><a href="#">Checkout</a></li>
+                </ul>
+            </li>
+        </ul></li>
+        <li><a href="#">News</a><ul class="submenu">
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li>
+                <a href="#">Variants ▶</a>
+                <ul class="submenu-right">
+                    <li><a href="#">Option 1</a></li>
+                    <li><a href="#">Option 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Pagination ▶</a>
+                <ul class="submenu-right">
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Cart Icon ▶</a>
+                <ul class="submenu-right">
+                    <li><a href="#">View Cart</a></li>
+                    <li><a href="#">Checkout</a></li>
+                </ul>
+            </li>
+        </ul></li>
+        <li><a href="#">Pages</a>
+            <ul class="submenu">
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li>
+                    <a href="#">Variants ▶</a>
+                    <ul class="submenu-right">
+                        <li><a href="#">Option 1</a></li>
+                        <li><a href="#">Option 2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Pagination ▶</a>
+                    <ul class="submenu-right">
+                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Page 2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Cart Icon ▶</a>
+                    <ul class="submenu-right">
+                        <li><a href="#">View Cart</a></li>
+                        <li><a href="#">Checkout</a></li>
+                    </ul>
+                </li>
+            </ul></li>
+        <li><a href="#">Buy Now</a></li>
+        <li  class="w3-xlarge"><i class="fa fa-search"></i></li>
+    </ul>
+</nav>
+<div class="product-container">
+    <div class="product">
+        <div class="image-box">
+            <img src="https://demo.kaliumtheme.com/fashion/wp-content/uploads/2016/11/broken_6.jpg" class="default-img">
+            <img src="https://demo.kaliumtheme.com/fashion/wp-content/uploads/2016/11/broken_2-820x1016.jpg" class="hover-img">
+        </div>
+        <p class="product-name">Broken T Shirt</p>
+        <p class="price">$9</p>
+        <p class="category">Men, T Shirts</p>
+    </div>
+
+    <div class="product">
+        <div class="image-box">
+            <img src="https://demo.kaliumtheme.com/fashion/wp-content/uploads/2016/11/broken_6.jpg" class="default-img">
+            <img src="https://demo.kaliumtheme.com/fashion/wp-content/uploads/2016/11/broken_2-820x1016.jpg" class="hover-img">
+        </div>
+        <p class="product-name">Knickerboxer</p>
+        <p class="price">$25</p>
+        <p class="category">Men, Sweaters</p>
+    </div>
+
+    <div class="product">
+        <div class="image-box">
+            <img src="https://demo.kaliumtheme.com/fashion/wp-content/uploads/2016/11/broken_6.jpg" class="default-img">
+            <img src="https://demo.kaliumtheme.com/fashion/wp-content/uploads/2016/11/broken_2-820x1016.jpg" class="hover-img">
+        </div>
+        <p class="product-name">Studio Belt</p>
+        <p class="price">$7</p>
+        <p class="category">Accessories</p>
+    </div>
+
+    <div class="product">
+        <div class="image-box">
+            <img src="https://demo.kaliumtheme.com/fashion/wp-content/uploads/2016/11/broken_6.jpg" class="default-img">
+            <img src="https://demo.kaliumtheme.com/fashion/wp-content/uploads/2016/11/broken_2-820x1016.jpg" class="hover-img">
+        </div>
+        <p class="product-name">Chambray Shirt</p>
+        <p class="price">$29</p>
+        <p class="category">Men, Sweaters</p>
+    </div>
+</div>
+</body>
+</html>
