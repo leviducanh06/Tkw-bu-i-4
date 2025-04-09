@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tìm số lớn nhất và nhỏ nhất</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    input, button {
+      padding: 8px;
+      margin: 8px 0;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Nhập dãy số cách nhau bởi dấu phẩy</h2>
+  <input type="text" id="daySoInput" placeholder="VD: 3, 7, 2, 9, 5">
+  <br>
+  <button onclick="xuLy()">Tìm số lớn nhất và nhỏ nhất</button>
+
+  <h3 id="ketQua"></h3>
+
+  <script>
+    function xuLy() {
+      // Lấy giá trị người dùng nhập
+      const input = document.getElementById("daySoInput").value;
+
+      // Tách dãy số bằng dấu phẩy, chuyển sang mảng số
+      const arr = input.split(",").map(x => parseFloat(x.trim()));
+
+      // Kiểm tra hợp lệ: nếu có phần tử không phải là số thì báo lỗi
+      if (arr.some(isNaN)) {
+        document.getElementById("ketQua").innerText = "Vui lòng nhập đúng định dạng số, cách nhau bằng dấu phẩy.";
+        return;
+      }
+
+      // Tìm số lớn nhất và nhỏ nhất
+      const max = Math.max(...arr);
+      const min = Math.min(...arr);
+
+      // Hiển thị kết quả
+      document.getElementById("ketQua").innerText = 
+        `Số lớn nhất là: ${max} \nSố nhỏ nhất là: ${min}`;
+    }
+  </script>
+
+</body>
+</html>
