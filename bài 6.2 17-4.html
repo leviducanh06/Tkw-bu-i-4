@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phép toán DOM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+    table {
+      margin-top: 20px;
+    }
+    input[type="number"] {
+      width: 50px;
+    }
+    input[readonly] {
+      background-color: #eee;
+    }
+    .result-log {
+      margin-top: 30px;
+    }
+    .phep {
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 20px;
+    }
+    .add { color: black; }
+    .sub { color: gray; }
+    .mul { color: green; }
+    .div { color: red; }
+  </style>
+</head>
+<style>.back-home {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3361d6;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.back-home:hover {
+    background-color: #526ddc;
+    }</style>
+<body>
+
+  
+  <h3>các phép toán</h3>
+
+  <table>
+    <tr>
+      <td>phép cộng</td>
+      <td><input type="number" id="add1" value="3"></td>
+      <td>+</td>
+      <td><input type="number" id="add2" value="3"></td>
+      <td>=</td>
+      <td><input type="text" id="addResult" readonly></td>
+      <td><button onclick="calculate('add')">Tính</button></td>
+    </tr>
+    <tr>
+      <td>phép trừ</td>
+      <td><input type="number" id="sub1" value="3"></td>
+      <td>-</td>
+      <td><input type="number" id="sub2" value="3"></td>
+      <td>=</td>
+      <td><input type="text" id="subResult" readonly></td>
+      <td><button onclick="calculate('sub')">Tính</button></td>
+    </tr>
+    <tr>
+      <td>phép nhân</td>
+      <td><input type="number" id="mul1" value="2"></td>
+      <td>*</td>
+      <td><input type="number" id="mul2" value="2"></td>
+      <td>=</td>
+      <td><input type="text" id="mulResult" readonly></td>
+      <td><button onclick="calculate('mul')">Tính</button></td>
+    </tr>
+    <tr>
+      <td>phép chia</td>
+      <td><input type="number" id="div1" value="3"></td>
+      <td>/</td>
+      <td><input type="number" id="div2" value="3"></td>
+      <td>=</td>
+      <td><input type="text" id="divResult" readonly></td>
+      <td><button onclick="calculate('div')">Tính</button></td>
+    </tr>
+  </table>
+
+  <div class="result-log">
+    <h3>Các phép toán vừa thực hiện</h3>
+    <div id="history"></div>
+  </div>
+
+  <script>
+    function calculate(type) {
+      let a, b, result, operator, className, label;
+
+      switch(type) {
+        case 'add':
+          a = +document.getElementById('add1').value;
+          b = +document.getElementById('add2').value;
+          result = a + b;
+          document.getElementById('addResult').value = result;
+          operator = '+';
+          className = 'add';
+          label = 'PHÉP CỘNG';
+          break;
+
+        case 'sub':
+          a = +document.getElementById('sub1').value;
+          b = +document.getElementById('sub2').value;
+          result = a - b;
+          document.getElementById('subResult').value = result;
+          operator = '-';
+          className = 'sub';
+          label = 'PHÉP TRỪ';
+          break;
+
+        case 'mul':
+          a = +document.getElementById('mul1').value;
+          b = +document.getElementById('mul2').value;
+          result = a * b;
+          document.getElementById('mulResult').value = result;
+          operator = '*';
+          className = 'mul';
+          label = 'PHÉP NHÂN';
+          break;
+
+        case 'div':
+          a = +document.getElementById('div1').value;
+          b = +document.getElementById('div2').value;
+          result = b !== 0 ? (a / b) : 'Lỗi';
+          document.getElementById('divResult').value = result;
+          operator = '/';
+          className = 'div';
+          label = 'PHÉP CHIA';
+          break;
+      }
+
+      // Ghi vào lịch sử
+      const history = document.getElementById('history');
+      const entry = document.createElement('div');
+      entry.className = 'phep ' + className;
+      entry.innerHTML = `${label}<br>${a}${operator}${b}=${result}`;
+      history.appendChild(entry);
+    }
+  </script>
+     <a href="index.html" class="back-home">Quay về trang chủ</a>
+
+</body>
+</html>

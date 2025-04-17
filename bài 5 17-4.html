@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Slideshow</title>
+  <style>
+    .slideshow-container {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<style>.back-home {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3361d6;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.back-home:hover {
+  background-color: #526ddc;
+  }</style>
+<body>
+
+  <div class="slideshow-container">
+    <div class="slide">
+      <img src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/04/anh-ha-noi-17.jpg" alt="Ảnh 1">
+    </div>
+    <div class="slide">
+      <img src="https://media.istockphoto.com/id/481045024/vi/anh/tran-quoc-pagoda.jpg?s=612x612&w=0&k=20&c=yPbbMc3B_WSMM7QG1WrsqgpzNhf9KATeyO6mllBgDfE=" alt="Ảnh 2">
+    </div>
+    <div class="slide">
+      <img src="https://kenh14cdn.com/203336854389633024/2025/3/7/ham-ca-map-2-1741251416631-1741251416818565753905-1741315811008-1741315811215519401905.jpeg" alt="Ảnh 3">
+    </div>
+
+    <!-- Nút điều hướng -->
+    <a class="prev" onclick="nextSlide()">&#10094;</a>
+    <a class="next" onclick="prevSlide()">&#10095;</a>
+  </div>
+
+  <script>
+    let currentSlideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlide(index) {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[index].style.display = "block";
+    }
+
+    function nextSlide() {
+      currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+      showSlide(currentSlideIndex);
+    }
+
+    function prevSlide() {
+      currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+      showSlide(currentSlideIndex);
+    }
+
+    // Hiển thị slide đầu tiên khi tải trang
+    showSlide(currentSlideIndex);
+  </script>
+   <div class="center-button"></div>
+     <a href="index.html" class="back-home">Quay về trang chủ</a
+
+</body>
+</html>

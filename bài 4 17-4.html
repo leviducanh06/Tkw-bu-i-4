@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Đăng Ký</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 500px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    h2 {
+      color: #800080;
+      text-align: center;
+    }
+    label {
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 5px;
+    }
+    input[type="text"], select, textarea {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    .back-home {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #337ad6;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .back-home:hover {
+      background-color: #526ddc;
+    }
+    .center-button {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>FORM ĐĂNG KÝ</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+      <label>Họ:</label>
+      <input type="text" id="lastName"><br>
+
+      <label>Tên:</label>
+      <input type="text" id="firstName"><br>
+
+      <label>Ngày sinh:</label>
+      <select>
+        <option>Ngày 1</option>
+      </select>
+      <select>
+        <option>Tháng 1</option>
+      </select>
+      <select>
+        <option>Năm 1980</option>
+      </select><br>
+
+      <label>Giới tính:</label>
+      <input type="radio" name="gender" value="Nam">Nam
+      <input type="radio" name="gender" value="Nữ">Nữ<br>
+
+      <label>Số điện thoại:</label>
+      <input type="text" id="phoneNumber"><br>
+
+      <label>Sở thích:</label>
+      <input type="checkbox">Đọc sách
+      <input type="checkbox">Xem phim
+      <input type="checkbox">Nghe nhạc
+      <input type="checkbox">Đá bóng<br><br>
+
+      <label>Khác:</label><br>
+      <textarea rows="3" cols="40"></textarea><br>
+
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+
+    <!-- Nút quay về được căn giữa -->
+    <div class="center-button">
+      <a href="index.html" class="back-home">Quay về trang chủ</a>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      const lastName = document.getElementById("lastName").value.trim();
+      const firstName = document.getElementById("firstName").value.trim();
+      const phone = document.getElementById("phoneNumber").value.trim();
+
+      if (lastName === "") {
+        alert("Vui lòng nhập họ.");
+        return false;
+      }
+
+      if (firstName === "") {
+        alert("Vui lòng nhập tên.");
+        return false;
+      }
+
+      const phoneRegex = /^[0-9]{10}$/;
+      if (!phoneRegex.test(phone)) {
+        alert("Vui lòng nhập số điện thoại hợp lệ (10 chữ số).");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>

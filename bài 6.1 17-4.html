@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đổi màu nền</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #colorBox {
+      padding: 20px;
+      margin: 20px;
+      border: 1px solid #000000;
+      display: inline-block;
+    }
+
+    button {
+      padding: 5px 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<style>.back-home {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3361d6;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.back-home:hover {
+  background-color: #526ddc;
+  }</style>
+<body>
+
+  <div id="colorBox">
+    <p>đổi màu tôi đi</p>
+    <button onclick="changeColor()">xanh</button>
+  </div>
+
+  <script>
+    function changeColor() {
+      document.body.style.backgroundColor = "lightblue"; // hoặc "blue"
+    }
+  </script>
+  <div class="center-button"></div>
+  <a href="index.html" class="back-home">Quay về trang chủ</a
+
+</body>
+</html>
