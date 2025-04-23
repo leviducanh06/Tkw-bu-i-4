@@ -1,0 +1,46 @@
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .font{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+        }
+        .mau{
+            color: rgb(255, 0, 0);
+        }
+        .co{
+            font-size: 5px;
+        }
+    </style>
+</head>
+
+
+<style>.back-home {
+display: inline-block;
+margin-top: 20px;
+padding: 10px 20px;
+background-color: #3361d6;
+color: white;
+text-decoration: none;
+border-radius: 25px;
+font-size: 16px;
+transition: 0.3s;
+}
+.back-home:hover {
+background-color: #526ddc;
+}</style>
+<body>
+    <h1 class="font" id="td1">BUM</h1>
+    <button onclick="tonho()">CLICK HERE </button>
+    <script>
+        var pt=document.getElementById("td1");
+        pt.classList.add("mau", "co");
+        function tonho(){
+            pt.classList.toggle("co");
+        }
+    </script>
+    <a href="index.html" class="back-home">Quay về trang chủ</a>
+</body>
+</html>

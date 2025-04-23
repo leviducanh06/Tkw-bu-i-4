@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Thêm node ở vị trí xác định: before</h2>
+    <div id="container">
+      <p id="p1">Ni hảo</p>
+      <p id="p2">Wo shi ma</p>
+    </head>
+
+    <style>.back-home {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3361d6;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: 0.3s;
+    }
+    .back-home:hover {
+    background-color: #526ddc;
+    }</style>
+    </div>
+    <button onclick="addnode()">Add Node</button>
+    <script>
+      function addnode() {
+        var x = document.createElement('p');
+        x.className = "p3";
+        x.innerText = "Are you okay?";
+        var cha = document.getElementById('container');
+        var y = document.getElementById('p2');
+        cha.insertBefore(x, y);
+      }
+    </script>
+    <a href="index.html" class="back-home">Quay về trang chủ</a>
+  </body>
+</html>

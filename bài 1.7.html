@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Ấn vào Add Imagine </h2>
+    <div id="bo"></div>
+    <button onclick="addnode_img();">Add Image</button>
+  </head>
+
+<style>.back-home {
+display: inline-block;
+margin-top: 20px;
+padding: 10px 20px;
+background-color: #3361d6;
+color: white;
+text-decoration: none;
+border-radius: 25px;
+font-size: 16px;
+transition: 0.3s;
+}
+.back-home:hover {
+background-color: #526ddc;
+}</style>
+    <script>
+      function addnode_img() {
+        var pt = document.createElement('img');
+        pt.src = "https://static.lag.vn/upload/news/22/01/27/kimetsu-no-yaiba-vi-sao-zenitsu-manh-hon-khi-ngu-2_STFW.jpg?w=800&encoder=wic&subsampling=444";
+        document.getElementById("bo").appendChild(pt);
+      }
+    </script>
+     <a href="index.html" class="back-home">Quay về trang chủ</a>
+  </body>
+</html>
